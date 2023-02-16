@@ -8,6 +8,7 @@ const additionalInfo = document.getElementById("additionalInfo");
 	
 	 fetch("https://randomuser.me/api/")
 	 .then(response=>response.json())
+	 
 	 .then(data=>{
 		 const user = data.results[0];
 		 fullName.innerText=user.fullName.first+" "+user.fullName.last;
@@ -23,13 +24,13 @@ const emailButton = document.querySelector('[data-attr ="email"]');
 const phoneButton = document.querySelector('[data-attr ="phone"]');
 ageButton.addEventListener("click",function(){
 	additionalInfo.innerText = "Age: "+fullName.dataset.age;	
-)};
+});
 emailButton.addEventListener("click",function(){
 	additionalInfo.innerText = "Email: "+fullName.dataset.email;	
-)};
+});
 phoneButton.addEventListener("click",function(){
 	additionalInfo.innerText = "Phone: "+fullName.dataset.phone;	
-)};
+});
 
 getUserButton.click();
 
